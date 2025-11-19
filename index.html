@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Private Room</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700;900&display=swap" rel="stylesheet">
+
+  <style>
+    body, html {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      overflow: hidden;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    #bg-video {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      z-index: -2;
+    }
+
+    .hero-overlay {
+      background: rgba(0, 0, 0, 0.55);
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      z-index: -1;
+    }
+
+    .gradient-big {
+      font-family: 'Poppins', sans-serif;
+      font-size: clamp(3rem, 7vw, 5rem);
+      font-weight: 900;
+      color: white;
+      text-shadow: 
+        0 0 10px rgba(255,0,0,0.8),
+        0 0 20px rgba(255,0,0,0.6),
+        0 0 35px rgba(255,0,0,0.4);
+      letter-spacing: 3px;
+      text-align: center;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 1;
+      border: 3px solid #ffffff;
+      box-shadow: 0 0 25px rgba(255, 255, 255, 0.3);
+      background: rgba(0, 0, 0, 0.65);
+      border-radius: 1rem;
+      padding: 2rem;
+      max-width: 600px;
+    }
+
+    .cta-btn {
+      display: inline-block;
+      padding: 1rem 2rem;
+      font-weight: 700;
+      font-size: 1.1rem;
+      border-radius: 12px;
+      background: radial-gradient(circle, #ff1a1a 0%, #cc0000 70%);
+      color: #fff;
+      border: 3px solid #ffffff;
+      text-shadow: 0 0 6px #000;
+      box-shadow: 0 0 20px rgba(255, 26, 26, 0.9), 
+                  0 0 35px rgba(255, 255, 255, 0.9);
+      transition: transform 0.2s ease, box-shadow 0.3s ease;
+    }
+
+    .cta-btn:hover {
+      transform: scale(1.1);
+      box-shadow: 0 0 35px rgba(255, 26, 26, 1), 
+                  0 0 60px rgba(255, 255, 255, 1);
+    }
+
+    .gradient-text {
+      font-weight: bold;
+      color: white;
+      text-shadow: 0 0 6px rgba(255,0,0,0.8);
+    }
+
+    .quiz-step.hidden {
+      display: none;
+    }
+
+    .footer-text {
+      margin-top: 1rem;
+      font-size: 0.7rem;
+      text-align: center;
+      color: rgba(255, 255, 255, 0.7);
+    }
+  </style>
+</head>
+
+<body class="text-white">
+
+  <!-- Background Video -->
+  <video autoplay muted loop id="bg-video">
+    <source src="Video/ide.mp4" type="video/mp4">
+  </video>
+  <div class="hero-overlay"></div>
+
+  <!-- Main Section -->
+  <section class="absolute top-0 left-0 w-full h-full flex flex-col items-center justify-center text-center px-6">
+    
+    <div class="mb-20">
+      <h1 class="gradient-big mb-4">MY PRIVATE ROOM</h1>
+      <h2 class="gradient-big text-2xl md:text-3xl">I WILL MAKE YOU SATISFIED</h2>
+    </div>
+
+    <div class="hero-content">
+
+      <h1 class="text-lg md:text-xl mb-8 gradient-text">
+        Darling I'm naked, would you like to video call with me? or watch my video collection, it's all here
+      </h1>
+
+      <!-- STEP 1 -->
+      <div id="quiz-step-1" class="quiz-step">
+        <p class="mb-6 text-xl gradient-text">Are you ready to play with me?</p>
+        <div class="flex flex-col gap-4">
+          <button onclick="nextStep(2)" class="w-full py-3 rounded-xl font-bold text-lg bg-red-600 border-2 border-red-400 text-white shadow-[0_0_15px_rgba(255,20,20,0.8)] hover:scale-105 transition">Private Video Call</button>
+          <button onclick="nextStep(2)" class="w-full py-3 rounded-xl font-bold text-lg bg-white text-red-600 border-2 border-red-400 shadow-[0_0_15px_rgba(255,255,255,0.8)] hover:scale-105 transition">Exclusive Hot Videos</button>
+          <button onclick="nextStep('album-section')" class="w-full py-3 rounded-xl font-bold text-lg bg-red-800 text-white border-2 border-red-500 shadow-[0_0_15px_rgba(255,0,0,0.8)] hover:scale-105 transition">My Album & Biodata</button>
+        </div>
+      </div>
+
+      <!-- STEP 2 -->
+      <div id="quiz-step-2" class="quiz-step hidden">
+        <p class="mb-4 gradient-text">How old are you?</p>
+        <button onclick="nextStep(3)" class="cta-btn w-full mb-4">18 - 25</button>
+        <button onclick="nextStep(3)" class="cta-btn w-full mb-4">26 - 35</button>
+        <button onclick="nextStep(3)" class="cta-btn w-full">36+</button>
+      </div>
+
+      <!-- STEP 3 -->
+      <div id="quiz-step-3" class="quiz-step hidden">
+        <p class="mb-4 gradient-text">Ready to see singles near you?</p>
+        <a href="https://www.liveroomcam.com/?utm_source=da57dc555e50572d&&ban=fb&s1=232783&s2=2110275&click_id=AREK-AREK-PODO-SOMBONG" 
+           class="cta-btn w-full">Join for my Private Video & Video Call</a>
+      </div>
+
+      <!-- ALBUM SECTION -->
+      <div id="album-section" class="quiz-step hidden">
+        <h2 class="gradient-text text-xl mb-4">My Album, Video & Biodata</h2>
+        <div class="overflow-y-auto max-h-[400px] pr-2">
+
+          <!-- PHOTO ALBUM -->
+          <h3 class="gradient-text text-lg mb-2">Photo Album</h3>
+          <div class="grid grid-cols-2 gap-4 mb-6">
+            <div class="text-center">
+              <img onclick="openLink('https://www.liveroomcam.com/?utm_source=da57dc555e50572d&&ban=fb&s1=232783&s2=2110275&click_id=AREK-AREK-PODO-SOMBONG')" src="Album/kntl1.jpg" class="rounded-lg cursor-pointer border border-white shadow-lg">
+              <div class="mt-2 text-sm text-white leading-snug text-center">
+                <p><strong>Name:</strong> Charlotte Johnson</p>
+                <p><strong>Age:</strong> 31</p>
+                <p><strong>Location:</strong> San Francisco</p>
+                <p><strong>Hobby:</strong> Photoshoot</p>
+              </div>
+            </div>
+            <div class="text-center">
+              <img onclick="openLink('https://www.liveroomcam.com/?utm_source=da57dc555e50572d&&ban=fb&s1=232783&s2=2110275&click_id=AREK-AREK-PODO-SOMBONG')" src="Album/kntl2.jpg" class="rounded-lg cursor-pointer border border-white shadow-lg">
+              <div class="mt-2 text-sm text-white leading-snug text-center">
+                <p><strong>Name:</strong> Amelia Davis</p>
+                <p><strong>Age:</strong> 41</p>
+                <p><strong>Location:</strong> Sukodono</p>
+                <p><strong>Hobby:</strong> Dance</p>
+              </div>
+            </div>
+            <div class="text-center">
+              <img onclick="openLink('https://www.liveroomcam.com/?utm_source=da57dc555e50572d&&ban=fb&s1=232783&s2=2110275&click_id=AREK-AREK-PODO-SOMBONG')" src="Album/kntl3.jpg" class="rounded-lg cursor-pointer border border-white shadow-lg">
+              <div class="mt-2 text-sm text-white leading-snug text-center">
+                <p><strong>Name:</strong> Charlotte Brown</p>
+                <p><strong>Age:</strong> 35</p>
+                <p><strong>Location:</strong> Boston</p>
+                <p><strong>Hobby:</strong> Cosplay</p>
+              </div>
+            </div>
+            <div class="text-center">
+              <img onclick="openLink('https://www.liveroomcam.com/?utm_source=da57dc555e50572d&&ban=fb&s1=232783&s2=2110275&click_id=AREK-AREK-PODO-SOMBONG')" src="Album/kntl4.jpg" class="rounded-lg cursor-pointer border border-white shadow-lg">
+              <div class="mt-2 text-sm text-white leading-snug text-center">
+                <p><strong>Name:</strong> Isabella Kim</p>
+                <p><strong>Age:</strong> 21</p>
+                <p><strong>Location:</strong> San Francisco</p>
+                <p><strong>Hobby:</strong> Photoshoot & Dance</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- VIDEO ALBUM -->
+          <h3 class="gradient-text text-lg mb-2">Video Album</h3>
+          <div class="grid grid-cols-2 gap-4 mb-6">
+            <!-- Video items full 4 -->
+            <div class="cursor-pointer rounded-lg overflow-hidden shadow-lg" onclick="openLink('https://www.liveroomcam.com/?utm_source=da57dc555e50572d&&ban=fb&s1=232783&s2=2110275&click_id=AREK-AREK-PODO-SOMBONG')">
+              <img src="Album/vid1.webp" class="w-full h-auto">
+              <div class="mt-2 text-sm text-white leading-snug text-center">
+                <p><strong>Name:</strong> Emily Rose</p>
+                <p><strong>Age:</strong> 22</p>
+                <p><strong>Location:</strong> New York</p>
+                <p><strong>Hobby:</strong> Yoga, Photography</p>
+              </div>
+            </div>
+
+            <div class="cursor-pointer rounded-lg overflow-hidden shadow-lg" onclick="openLink('https://www.liveroomcam.com/?utm_source=da57dc555e50572d&&ban=fb&s1=232783&s2=2110275&click_id=AREK-AREK-PODO-SOMBONG')">
+              <img src="Album/vid2.webp" class="w-full h-auto">
+              <div class="mt-2 text-sm text-white leading-snug text-center">
+                <p><strong>Name:</strong> Sophia Lee</p>
+                <p><strong>Age:</strong> 34</p>
+                <p><strong>Location:</strong> Los Angeles</p>
+                <p><strong>Hobby:</strong> Surfing, Cosplay</p>
+              </div>
+            </div>
+
+            <div class="cursor-pointer rounded-lg overflow-hidden shadow-lg" onclick="openLink('https://www.liveroomcam.com/?utm_source=da57dc555e50572d&&ban=fb&s1=232783&s2=2110275&click_id=AREK-AREK-PODO-SOMBONG')">
+              <img src="Album/vid3.webp" class="w-full h-auto">
+              <div class="mt-2 text-sm text-white leading-snug text-center">
+                <p><strong>Name:</strong> Olivia Smith</p>
+                <p><strong>Age:</strong> 31</p>
+                <p><strong>Location:</strong> Miami</p>
+                <p><strong>Hobby:</strong> Fitness, Painting</p>
+              </div>
+            </div>
+
+            <div class="cursor-pointer rounded-lg overflow-hidden shadow-lg" onclick="openLink('https://www.liveroomcam.com/?utm_source=da57dc555e50572d&&ban=fb&s1=232783&s2=2110275&click_id=AREK-AREK-PODO-SOMBONG')">
+              <img src="Album/vid4.webp" class="w-full h-auto">
+              <div class="mt-2 text-sm text-white leading-snug text-center">
+                <p><strong>Name:</strong> Ava Johnson</p>
+                <p><strong>Age:</strong> 31</p>
+                <p><strong>Location:</strong> Seattle</p>
+                <p><strong>Hobby:</strong> Music, Hiking</p>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <button onclick="nextStep(1)" class="mt-6 w-full py-3 rounded-xl font-bold text-lg bg-red-600 border-2 border-red-400 text-white shadow-[0_0_15px_rgba(255,20,20,0.8)] hover:scale-105 transition">Back</button>
+      </div>
+
+      <p class="footer-text">This website was built in 2025 by Shinzy</p>
+    </div>
+  </section>
+
+  <script>
+    function nextStep(step) {
+      document.querySelectorAll('.quiz-step').forEach(el => el.classList.add('hidden'));
+      document.getElementById('quiz-step-' + step)?.classList.remove('hidden');
+      document.getElementById(step)?.classList.remove('hidden');
+    }
+
+    function openLink(url) {
+      window.location.href = url;
+    }
+
+    // Anti iFrame
+    if (window.top !== window.self) {
+        window.top.location = window.self.location;
+    }
+
+    // Anti Right Click & Inspect + Popup MALENG
+    document.addEventListener("contextmenu", e => {
+        e.preventDefault();
+        alert("MALENG MALENG HAYO MALENG!");
+    });
+
+    document.onkeydown = function(e) {
+        if (
+            e.ctrlKey && (e.key === "u" || e.key === "U") || // Ctrl+U
+            e.keyCode === 123 || // F12
+            (e.ctrlKey && e.shiftKey && (e.key === "I" || e.key === "J" || e.key === "C")) // Ctrl+Shift+I/J/C
+        ) {
+            e.preventDefault();
+            alert("MALENG MALENG HAYO MALENG! WKWKWKWK");
+            return false;
+        }
+    };
+
+    // Anti Inspect via Debugger detection
+    (function() {
+        const threshold = 200;
+        let opened = false;
+        const check = () => {
+            const start = performance.now();
+            debugger;
+            const time = performance.now() - start;
+            if(time > threshold && !opened){
+                opened = true;
+                alert("MALENG MALENG HAYO MALENG!");
+                document.body.innerHTML = "";
+                location.href = "about:blank";
+            }
+        };
+        setInterval(check, 300);
+    })();
+  </script>
+
+</body>
+</html>
